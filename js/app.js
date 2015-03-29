@@ -1,17 +1,20 @@
 // The Frogger matrix is 6 rows x 5 colums
 // The canvas is col: 101 by row 83
-
 //Enemy bugs move across the 3 rows only
+
 //Global Variables
-var side = {left:0, right: 505, top:0, bottom:415};			  -0
-var move = {hor:101, vert:83};
+var side = {left: 0, right: 505, top: 0, bottom: 415};
+var move = {hor: 101, vert: 83};
 var games = 0;
 var plays = 3;
 var score = 0;
 var high = 0;
-var audio = new Audio;
-var endgame;
+var audio = new Audio();
+var dt; //used globally to represent time-distance
+var player; // used globally
 
+// Function called by the engine.js during Init - so it's only called
+// once at the start of the game.  Go Darth!
 function renderOnce() {
 	audio.src = 'sounds/WHATIF.wav';
 	audio.play();
@@ -23,29 +26,31 @@ var Enemy = function (x,y) {
 	this.x = x;
 	this.y = y;
 	this.speed = RandomizeEnemySpeed();
-}
+	
+};
 
 // Some Enemies will move at different speeds
 function RandomizeEnemySpeed() {
+	"use strict";
 	 return (Math.floor(Math.random() * 100) + 15);
 }
 
 // Update the enemy's position, required method for game
-// Parameter: dt, a time distance between ticks
+// Parameter: dt -- time distance between ticks
 Enemy.prototype.update = function (dt) {
 	// You should multiply any movement by the dt parameter
 	// which will ensure the game runs at the same speed for
 	// all computers.
-	if (this.x < side.right){
+	if (this.x < side.right) {
 		this.x += dt * this.speed + 2;
 	} else {
 		this.x = 0;
 		this.speed = RandomizeEnemySpeed();
 	}
 
-	 /* Check for collision. if the enemy hit the player
-	 * deduct a life and reset player's position
-	 */
+	// Check for collision. if the enemy hit the player
+	// deduct a life and reset player's position
+	//
 	if (Math.abs(this.x - player.x) < 30 && Math.abs(this.y - player.y) < 30) {
 		player.x = 215;
 		player.y = 435;
@@ -55,10 +60,6 @@ Enemy.prototype.update = function (dt) {
 	}
 };
 
- // Resets Enemy's x position to a random value.
-Enemy.prototype.resetPosition = function () {
-	this.x = generateRandomNumber(this.id * 75, this.id * 5);
-};
 
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function () {
@@ -100,8 +101,8 @@ Player.prototype.update = function () {
 // the initial score of 0
 // and your plays (froggers)
 
-Player.prototype.render = function (){
-
+Player.prototype.render = function () {
+	 var endtime;
 
 	if (this.plays < 1) {
 		 //reset for new game
@@ -109,8 +110,7 @@ Player.prototype.render = function (){
 		audio.play();
 		this.plays = 3;
 		this.games++;
-		if (this.score > this.high)
-		{
+		if (this.score > this.high) {
 			this.high = this.score;
 		}
 
@@ -153,12 +153,12 @@ Player.prototype.render = function (){
 };
 
 
-/*move the player on each key press.
- Up	key	will move the player upward	on y-axis
- Down key will move	the	player downwards
- Right key will	move the player	to the right on	x-axis
- Left key will move	the	player to the left on x-axis
- */
+// move the player on each key press.
+// Up key will move the player upward on y-axis
+// Down key will move the player downwards
+// Right key will move the player to the right on x-axis
+// Left key will move the player to the left on x-axis
+//
 Player.prototype.handleInput = function (key) {
 	if (key === 'left') {
 		this.x -= 100;
