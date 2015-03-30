@@ -1,7 +1,33 @@
 PROJECT 3 Submission - Sandy Gross
 
 
-First: Game info
+***********************************************************************
+*
+*  Greetings Gamer!!  
+*  
+* To run Frogger, use this URL:  http://slgross.github.io/
+* 
+* Darth will welcome you with a song, you are the little person and your goal is to get to 
+* the water without running into any bugs.
+* 
+* Bugs only run in the brick rows so you can find a way to avoid them
+* Use your arrow keys:  Up, down, left or right to move your character to different blocks
+* and avoid the blocks.
+* 
+* For each game, you get 3 lives and then the game restarts
+* The game maintains Your high score so that's cool - 
+* You can also tell how many times you've played the game (but you dont want the boss to see that)
+* 
+* And, Darth is there to help you - if you like him or challenge you if you dont!
+* 
+* GOOD LUCK!
+* May the FORCE be with YOU!!
+* 
+* ********************************************************************************
+
+
+
+ Game info
 
 1: Darth will welcome you to the game
 
@@ -35,6 +61,8 @@ not what happen's..and i tried all those techniques they give you when you googl
 isn't as perfect as i'd like - it doesnt look to the user like it resets as it should but that's becuase it
 reset as soon as the music started playing and the other game was over.  I spent a lot of time on that
 and just gave up on stupid work arounds and let JavaScript have its way.
+
+And, my new one - setting up that URL for the game - what a friggn pain.  Github is a pain in my hub!
 
 The Style Guide is a little confusing for me.  Hopefully, if you ding me on that,you'll explain what you didnt like.
 
