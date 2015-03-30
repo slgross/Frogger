@@ -5,16 +5,17 @@ PROJECT 3 Submission - Sandy Gross
 *
 *  Greetings Gamer!!  
 *  
-* To run Frogger, use this URL:  http://slgross.github.io/
+* To run Frogger, use this URL:  http://slgross.github.io/ or download the code to a local directory and 
+* run index.html in chrome.
 * 
-* Darth will welcome you with a song, you are the little person and your goal is to get to 
+* Darth will welcome you with a song (if ou download the code), you are the little person and your goal is to get to 
 * the water without running into any bugs.
 * 
 * Bugs only run in the brick rows so you can find a way to avoid them
 * Use your arrow keys:  Up, down, left or right to move your character to different blocks
 * and avoid the blocks.
 * 
-* For each game, you get 3 lives and then the game restarts
+* For each game, you get 3 lives and then the game restarts and plays the Frogger song.
 * The game maintains Your high score so that's cool - 
 * You can also tell how many times you've played the game (but you dont want the boss to see that)
 * 
